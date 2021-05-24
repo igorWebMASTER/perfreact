@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css'
-import { useState, FormEvent } from 'react'
+import { useState, FormEvent, useCallback } from 'react'
 import { SearchResults } from '../components/SearchResults'
 
 export default function Home() {
@@ -22,6 +22,9 @@ export default function Home() {
     setResults(data)
   }
 
+  const addToWishList = useCallback((id : number) => {
+      console.log(id)
+    }, [])
 
   return (
     <div className={styles.container}>
@@ -35,7 +38,10 @@ export default function Home() {
         <button type="submit">Buscar</button>
       </form> 
 
-      <SearchResults  results={results} />
+      <SearchResults  
+        results={results} 
+        onAddToWishList={addToWishList} 
+      />
     </div>
   )
 }
