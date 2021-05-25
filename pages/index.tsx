@@ -50,7 +50,7 @@ export default function Home() {
 
   const addToWishList = useCallback((id : number) => {
       console.log(id)
-    }, [])
+  }, [])
 
   return (
     <div className={styles.container}>
